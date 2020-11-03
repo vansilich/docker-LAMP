@@ -12,7 +12,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
  && chmod 755 /usr/bin/composer
 
 # Install additional PHP libraries
-RUN docker-php-ext-install bcmath pdo_mysql
+RUN docker-php-ext-install bcmath pdo_mysql mysqli
 
 # Install libraries for compiling GD, then build it
 RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
