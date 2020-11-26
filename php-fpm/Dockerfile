@@ -3,7 +3,7 @@ FROM php:7.4-fpm-alpine3.12
 # Install tools required for build stage
 RUN apk add --update --no-cache \
     bash curl wget rsync ca-certificates openssl openssh git tzdata openntpd \
-    libxrender fontconfig libc6-compat \
+    libxrender fontconfig libc6-compat libxml2-dev\
     mysql-client gnupg binutils-gold autoconf \
     g++ gcc gnupg libgcc linux-headers make python3
 
