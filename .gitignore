@@ -1,5 +1,4 @@
 /.idea/
-/docker-compose.yml
 /databases/
 /logs/
 /htdocs/
