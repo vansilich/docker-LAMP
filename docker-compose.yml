@@ -7,9 +7,9 @@ services:
     ports:
       - 127.0.0.1:80:80
     volumes:
-      - ./htdocs:/var/www/html
-      - ./configs/nginx:/etc/nginx/conf.d
-      - ./logs/nginx:/var/log/nginx
+      - ./htdocs:/var/www/html:cached
+      - ./configs/nginx:/etc/nginx/conf.d:cached
+      - ./logs/nginx:/var/log/nginx:cached
 
   php-fpm:
     build:
@@ -17,7 +17,7 @@ services:
     ports:
     - 127.0.0.1:9000:9000
     volumes:
-    - ./htdocs:/var/www/html
+    - ./htdocs:/var/www/html:cached
 
 #  php:
 #    build:
@@ -37,7 +37,7 @@ services:
       MYSQL_USER: test_user
       MYSQL_PASSWORD: test_pass
     volumes:
-      - ./databases/mariadb:/var/lib/mysql
+      - ./databases/mariadb:/var/lib/mysql:cached
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
